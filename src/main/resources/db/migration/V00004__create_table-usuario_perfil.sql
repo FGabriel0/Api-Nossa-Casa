@@ -1,4 +1,5 @@
 CREATE TABLE IF NOT EXISTS usuario_perfil (
+    id SERIAL NOT NULL,
     id_usuario BIGINT NOT NULL,
     id_perfil BIGINT NOT NULL,
     CONSTRAINT pk_usuario_perfil PRIMARY KEY (id_usuario, id_perfil),

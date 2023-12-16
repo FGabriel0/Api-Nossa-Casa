@@ -23,36 +23,35 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/admin")
 @RequiredArgsConstructor
-
 public class AdminController {
-	private final AdminService service;
-	
-	@PostMapping("/autenticar")
-	public ResponseEntity autenticar( @RequestBody AdminDTO dto ) {
-		try {
-			Admin adminAutenticado = service.autenticar(dto.getEmail(), dto.getSenha());
-			return ResponseEntity.ok(adminAutenticado);
-		}catch (ErroAutenticacao e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
-	
-	@PostMapping
-	public ResponseEntity salvar( @RequestBody AdminDTO dto ) {
-		
-		Admin admin = Admin.builder()
-					.nome(dto.getNome())
-					.email(dto.getEmail())
-					.senha(dto.getSenha()).build();
-		
-		try {
-			Admin adminSalvo = service.salvarAdmin(admin);
-			return new ResponseEntity(adminSalvo, HttpStatus.CREATED);
-		}catch (RegraNegocioException e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-		
-	}
-	
+    
+    private  AdminService service;
+    
+    @PostMapping("/autenticar")
+    public ResponseEntity autenticar(@RequestBody AdminDTO dto) {
+        try {
+            Admin adminAutenticado = service.autenticar(dto.getEmail(), dto.getSenha());
+            return ResponseEntity.ok(adminAutenticado);
+        } catch (ErroAutenticacao e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 
+    @PostMapping
+    public ResponseEntity salvar(@RequestBody AdminDTO dto) {
+        Admin admin = Admin.builder()
+                .nome(dto.getNome())
+                .senha(dto.getSenha())
+                .build();
+
+        try {
+            Admin adminSalvo = service.salvarAdmin(admin);
+            return new ResponseEntity(adminSalvo, HttpStatus.CREATED);
+        } catch (RegraNegocioException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }
+
+
+

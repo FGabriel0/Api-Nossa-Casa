@@ -11,11 +11,15 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table( name = "usuario" , schema = "public")
 @Builder
+@Getter
+@Setter
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,6 +35,9 @@ public class Admin {
 	
 	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "ativo")
+	private boolean ativo;
 	
 	@Column(name = "senha")
 	@JsonIgnore

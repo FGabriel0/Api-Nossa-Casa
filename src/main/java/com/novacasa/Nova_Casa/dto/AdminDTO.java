@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AdminDTO {
-
-	private String email;
+	
 	private String nome;
+	private String email;
 	private String senha;
 }

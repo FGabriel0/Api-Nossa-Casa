@@ -49,9 +49,10 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
+    		<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
 		</dependency>
+
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -89,6 +90,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-maven-plugin</artifactId>
+            <version>7.15.0</version>
+            <configuration>
+                <url>jdbc:postgresql://localhost:5432/NossaCasa</url>
+                <user>postgres</user>
+                <password>admin</password>
+                <schemas>
+                    <schema>public</schema>
+                </schemas>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 

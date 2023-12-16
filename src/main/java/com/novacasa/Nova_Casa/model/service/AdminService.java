@@ -12,6 +12,6 @@ public interface AdminService {
 	
 	void validarEmail(String email);
 	
-	 Optional<Admin> obterPorId(Long id);
+	Optional<Admin> obterPorId(Long id);
 
 }

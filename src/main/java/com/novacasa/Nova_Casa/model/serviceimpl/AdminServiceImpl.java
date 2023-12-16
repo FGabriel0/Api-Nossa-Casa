@@ -11,16 +11,14 @@ import com.novacasa.Nova_Casa.model.exception.RegraNegocioException;
 import com.novacasa.Nova_Casa.model.repository.AdminRepository;
 import com.novacasa.Nova_Casa.model.service.AdminService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
 	
 	private AdminRepository repository;
 
-	@Autowired
-	public AdminServiceImpl(AdminRepository repository) {
-		super();
-		this.repository = repository;
-	}
 
 	@Override
 	public Admin autenticar(String email, String senha) {
