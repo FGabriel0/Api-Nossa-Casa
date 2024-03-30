@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PerfilDTO {
-	private Long id;
+	private Integer id;
     private String descricao;
     private String role;
     private boolean ativo;

@@ -8,22 +8,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "perfil")
-@Builder
+@Table(name = "perfil" , schema = "public")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 public class Perfil {
 
 	  	@Id
+		@Column(name = "id")
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 
@@ -33,7 +31,7 @@ public class Perfil {
 	    @Column(length = 125, nullable = false)
 	    private String role;
 
-	    @Column(nullable = false)
+	    @Column(name = "ativo", columnDefinition = "BOOLEAN")
 	    private boolean ativo = true;
 
 	    @Column(name = "data_criacao", nullable = false)

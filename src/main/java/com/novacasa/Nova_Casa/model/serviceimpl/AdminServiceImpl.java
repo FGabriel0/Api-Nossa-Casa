@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.novacasa.Nova_Casa.model.entidy.Admin;
+import com.novacasa.Nova_Casa.model.entidy.Usuario;
 import com.novacasa.Nova_Casa.model.exception.ErroAutenticacao;
 import com.novacasa.Nova_Casa.model.exception.RegraNegocioException;
 import com.novacasa.Nova_Casa.model.repository.AdminRepository;
@@ -17,29 +17,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
 	
+	@Autowired
 	private AdminRepository repository;
 
-
 	@Override
-	public Admin autenticar(String email, String senha) {
-		Optional<Admin> admin = repository.findByEmail(email);
-		
-		if(!admin.isPresent()) {
-			throw new ErroAutenticacao("Usuário não encontrado para o email digitado");
-		}
-		
-		if(!admin.get().getSenha().equals(senha)) {
-			throw new ErroAutenticacao("Senha inválida.");
-
-		}
-		return admin.get();
-	}
-
-
-	@Override
-	public Admin salvarAdmin(Admin admin) {
-		validarEmail(admin.getEmail());
-		return repository.save(admin);
+	public Usuario salvarAdmin(Usuario usuario) {
+		validarEmail(usuario.getEmail());
+		return repository.save(usuario);
 	}
 
 	@Override
@@ -51,9 +35,25 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public Optional<Admin> obterPorId(Long id) {
+	public Optional<Usuario> obterPorId(Long id) {
         return repository.findById(id);
 
 	}
-	
+
+	@Override
+	public Usuario autenticar(String email, String senha) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/*@Override
+	public void atualizarStatus(Integer id, StatusAdmin status) {
+		repository.findById(id)
+		.map(admin -> {
+			admin.setStatus(status);
+			return repository.save(admin);
+		}).orElseThrow(() -> new UsuarioNaoEncontradoException());
+	}
+	*/
 }

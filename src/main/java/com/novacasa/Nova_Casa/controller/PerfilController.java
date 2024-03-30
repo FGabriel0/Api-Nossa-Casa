@@ -1,4 +1,4 @@
-package com.novacasa.Nova_Casa.Controller;
+package com.novacasa.Nova_Casa.controller;
 
 import java.util.Optional;
 

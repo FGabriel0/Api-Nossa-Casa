@@ -8,4 +8,5 @@ import com.novacasa.Nova_Casa.model.entidy.Perfil;
 @Repository
 public interface PerfilRepository extends JpaRepository<Perfil, Long> {
 
+	
 }
