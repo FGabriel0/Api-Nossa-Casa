@@ -39,8 +39,8 @@ public class UsuarioPerfilImpl implements UsuarioPerfilService{
 				.orElseThrow(() -> new RegraNegocioException("Perfil não Encontrado"));
 		
 		UsuarioPerfil usuarioPerfil = new UsuarioPerfil();
-		usuarioPerfil.setIdUsuario(usuario);
-		usuarioPerfil.setIdPerfil(perfil);
+		usuarioPerfil.setUsuario(usuario);
+		usuarioPerfil.setPerfil(perfil);
 		
 		return repository.save(usuarioPerfil);
 		

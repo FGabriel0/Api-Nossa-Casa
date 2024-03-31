@@ -29,11 +29,11 @@ public class UsuarioPerfil {
 	
 	@ManyToOne
 	@JoinColumn(name="id_usuario")
-	private Usuario idUsuario;
+	private Usuario usuario;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_perfil" )
-	private Perfil idPerfil;
+	private Perfil perfil;
 	
 
 }
