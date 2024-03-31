@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.novacasa.Nova_Casa.dto.UsuarioPerfilDTO;
+import com.novacasa.Nova_Casa.controller.form.UsuarioPerfilForm;
 import com.novacasa.Nova_Casa.model.entidy.UsuarioPerfil;
 import com.novacasa.Nova_Casa.model.serviceimpl.UsuarioPerfilImpl;
 
@@ -22,7 +22,7 @@ public class UsuarioPerfilController {
 		
 	@PostMapping("/salvar")
 	@ResponseStatus(HttpStatus.CREATED)
-	public UsuarioPerfil salvar(@RequestBody UsuarioPerfilDTO dto) {	
+	public UsuarioPerfil salvar(@RequestBody UsuarioPerfilForm dto) {	
 		return service.salvar(dto); 
  
 	}

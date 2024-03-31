@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.novacasa.Nova_Casa.dto.AuthDTO;
+import com.novacasa.Nova_Casa.controller.dto.AuthDTO;
+import com.novacasa.Nova_Casa.controller.form.AuthForm;
 import com.novacasa.Nova_Casa.enums.ResponseStatusEnum;
-import com.novacasa.Nova_Casa.form.AuthForm;
 import com.novacasa.Nova_Casa.model.entidy.Usuario;
 import com.novacasa.Nova_Casa.model.serviceimpl.AuthServiceImpl;
 import com.novacasa.Nova_Casa.response.Response;

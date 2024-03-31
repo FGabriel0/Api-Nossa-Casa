@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.novacasa.Nova_Casa.dto.AdminDTO;
+import com.novacasa.Nova_Casa.controller.form.UsuarioForm;
 import com.novacasa.Nova_Casa.model.entidy.Usuario;
 import com.novacasa.Nova_Casa.model.exception.RegraNegocioException;
 import com.novacasa.Nova_Casa.model.service.AdminService;
@@ -25,12 +25,12 @@ public class AdminController {
     private  AdminService service;
     
     @PostMapping("/register")
-    public ResponseEntity salvar(@RequestBody AdminDTO dto) {
+    public ResponseEntity salvar(@RequestBody UsuarioForm form) {
     	  	
         Usuario usuario = Usuario.builder()
-                .nome(dto.getNome())
-                .email(dto.getEmail())
-                .senha(dto.getSenha())
+                .nome(form.getNome())
+                .email(form.getEmail())
+                .senha(form.getSenha())
                 .build();
 
         try {

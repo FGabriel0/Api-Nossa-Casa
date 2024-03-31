@@ -1,7 +1,7 @@
 package com.novacasa.Nova_Casa.model.service;
 
-import com.novacasa.Nova_Casa.dto.AuthDTO;
-import com.novacasa.Nova_Casa.form.AuthForm;
+import com.novacasa.Nova_Casa.controller.dto.AuthDTO;
+import com.novacasa.Nova_Casa.controller.form.AuthForm;
 
 public interface AuthService {
 	

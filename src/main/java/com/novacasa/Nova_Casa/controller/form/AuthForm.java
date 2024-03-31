@@ -1,4 +1,4 @@
-package com.novacasa.Nova_Casa.form;
+package com.novacasa.Nova_Casa.controller.form;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

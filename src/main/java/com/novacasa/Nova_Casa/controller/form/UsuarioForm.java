@@ -1,17 +1,15 @@
-package com.novacasa.Nova_Casa.dto;
+package com.novacasa.Nova_Casa.controller.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AdminDTO {
+public class UsuarioForm {
 	
 	private String nome;
 	private String email;

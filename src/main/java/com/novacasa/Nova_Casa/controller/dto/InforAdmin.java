@@ -1,4 +1,4 @@
-package com.novacasa.Nova_Casa.dto;
+package com.novacasa.Nova_Casa.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

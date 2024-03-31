@@ -1,6 +1,5 @@
-package com.novacasa.Nova_Casa.dto;
+package com.novacasa.Nova_Casa.controller.form;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -12,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UsuarioPerfilDTO {
+public class UsuarioPerfilForm {
 
 	//@JsonProperty("id_usuario")
 	@NotNull(message = "O ID do usuário não pode ser nulo")

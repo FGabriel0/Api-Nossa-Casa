@@ -9,8 +9,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.novacasa.Nova_Casa.dto.AuthDTO;
-import com.novacasa.Nova_Casa.form.AuthForm;
+import com.novacasa.Nova_Casa.controller.dto.AuthDTO;
+import com.novacasa.Nova_Casa.controller.form.AuthForm;
 import com.novacasa.Nova_Casa.model.entidy.Usuario;
 import com.novacasa.Nova_Casa.model.exception.RegraNegocioException;
 import com.novacasa.Nova_Casa.model.repository.AdminRepository;

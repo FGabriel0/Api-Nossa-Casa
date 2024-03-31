@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.novacasa.Nova_Casa.dto.UsuarioPerfilDTO;
+import com.novacasa.Nova_Casa.controller.form.UsuarioPerfilForm;
 import com.novacasa.Nova_Casa.model.entidy.Perfil;
 import com.novacasa.Nova_Casa.model.entidy.Usuario;
 import com.novacasa.Nova_Casa.model.entidy.UsuarioPerfil;
@@ -27,7 +27,7 @@ public class UsuarioPerfilImpl implements UsuarioPerfilService{
 		
 	@Override
 	@Transactional
-	public UsuarioPerfil salvar(UsuarioPerfilDTO dto) {
+	public UsuarioPerfil salvar(UsuarioPerfilForm dto) {
 				
 		Long idUsuario = dto.getIdUsuario();
 		Long idPerfil = dto.getIdPerfil();
